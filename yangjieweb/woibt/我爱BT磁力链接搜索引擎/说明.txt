@@ -1,0 +1,9 @@
+环境PHP5.3  支持伪静态.htaccess  
+后台/index.php/admin
+默认管理员：yuningwei 密码：fjxjhj53558
+管理员和密码修改Application\Common\Conf/config.php
+
+如果打开后台提示模版不存在：/Application/Admin/View/Index/index.html
+解决方法 打开文件位置/Application/Admin/View/Index/Index.html   Index.html的前面I改成小写i
+
+如果在使用过程中遇到任何问题，可以加QQ：2544542002进行咨询

