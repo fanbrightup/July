@@ -33,4 +33,4 @@ _斜体2_
 
 ![pic1](/home/my/Desktop/July/1.jpg)
 ![pic2](http://ww2.sinaimg.cn/large/6aee7dbbgw1efffa67voyj20ix0ctq3n.jpg)
-[link1](www.baidu.com)
+[link1](http://www.baidu.com)
