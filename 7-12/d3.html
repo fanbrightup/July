@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="jquery.js" type = "text/javascript"></script>
+  <script>
+  var jq = jQuery.noConflict();// 使用noConflict()函数来避免$符号冲突
+  jq(document).ready(function(){
+    jq("img:odd").mouseenter(function(e){
+      jq(this).css("opacity",0.5);
+    }).mouseout(function(e){
+      jq(this).css("opacity",1.0);
+    });
+  });
+  jq(document).ready(function(){
+    var elem = jq("img:odd").get(1);
+    console.log("Element:"+elem.tagName+" "+elem.src);
+  });
+  jq(document).ready(function(){
+    var labelElems = document.getElementsByTagName("label");
+    for(var i = 0;i < labelElems.length;i++){
+      labelElems[i].style.color="blue";
+    }
+  });
+  jq(document).ready(function(){
+    jq("label").css("color","red").css("font-size",".75em");
+  });
+  </script>
+
+</head>
+<body>
+  <label>
+    label1
+  </label>
+  <br>
+  <label>
+    label1
+  </label>
+  <br>
+  <label>
+    label1
+  </label>
+  <br>
+  <image src="../images/bg1.jpg" class="draw" width=200;>
+    <br>
+  <image src="../images/1.jpg" class="draw" width=200;>
+    <br>
+  <image src="../images/bg1.jpg" width=200;>
+      <br>
+  <image src="../images/1.jpg" width=200;>
+      <br>
+  <image src="../images/bg1.jpg" width=200;>
+          <br>
+  <image src="../images/1.jpg" width=200;>
+          <br>
+
+</body>
+</html>

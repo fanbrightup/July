@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+  <script>
+  var myArray = new Array();
+  myArray[0] = 100;
+  myArray[1] = "Adam";
+  myArray[2] = true;
+  var myArray2 = [200,"aaaa",false];
+  for(prop in myArray){
+    console.log(myArray2[prop]);
+  }
+  // var myArray3 ;
+  try{
+    for(var i=0 ;i < myArray3.length;i++){
+      console.log("Index"+i+":" + myArray[i]);
+    }
+  }catch(e){
+    console.log("Error"+e);
+  }finally{
+    alert("e");
+  }
+  </script>
+</body>
+</html>
