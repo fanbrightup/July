@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>绘画</title>
+  <meta charset="utf-8">
+</head>
+<body>
+  <canvas id="myCanvas" width="500" height="500" ></canvas>
+  <script src="jquery3.js"></script>
+  <script>
+    $(document).ready(function(){
+      var canvas = $("#myCanvas");
+      var context = canvas.get(0).getContext("2d");
+      context.beginPath();
+      context.moveTo(40,40);
+      context.lineTo(340,340);
+      context.closePath();
+      context.stroke();
+    });
+    function onTimeout(){
+      alert("3s!");
+    }
+    // var timer = setTimeout(onTimeout,3000);
+
+     interval = setInterval(onTimeout,3000);
+    function clearIn(){
+      clearInterval(interval);
+    }
+    var cleartime = setTimeout(clearIn,7000);
+
+  </script>
+</body>
+</html>

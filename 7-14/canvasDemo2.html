@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>绘画</title>
+  <meta charset="utf-8">
+</head>
+<body>
+  <canvas id="myCanvas" width="500" height="500" ></canvas>
+  <script src="jquery3.js"></script>
+  <script>
+    var jq = jQuery.noConflict();
+    jq(document).ready(function(){
+      var canvas = jq("#myCanvas");
+      var context = canvas.get(0).getContext("2d");
+      context.beginPath();
+      context.arc(230,90,50,0,Math.PI,true);
+      context.closePath();
+      context.fill();
+    });
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>绘画</title>
+  <meta charset="utf-8">
+  <style>
+  *{margin:0;padding:0;}
+  html,body{
+    height:100%;width:100%;
+  }
+  canvas{display:block}
+  </style>
+</head>
+<body>
+  <canvas id="myCanvas" width="600" height="300" ></canvas>
+  <script src="jquery3.js"></script>
+  <script>
+    $(document).ready(function( ){
+      var canvas = $("#myCanvas");
+      var context = canvas.get(0).getContext("2d");
+      canvas.attr("width",$(window).get(0).innerWidth);
+      canvas.attr("height",$(window).get(0).innerHeight);
+
+      // context.lineWidth=5;
+      context.strokeRect(40,40,100,100);
+      context.beginPath();
+      context.moveTo(40,40);
+      context.lineTo(340,340);
+      context.closePath();
+      // context.lineWidth=20;
+      context.strokeStyle="rgb(255,0,0)";
+      context.stroke();
+      var text = "hello world";
+      context.font = "italic 80px serif";
+      // context.fillText(text,180,80);
+      context.strokeText(text,160,100);
+      context.beginPath();
+      context.arc(230,90,50,0,Math.PI*2,false);
+      context.closePath();
+      context.fill();
+      context.clearRect(230,90,50,50);
+    });
+  </script>
+</body>
+</html>
