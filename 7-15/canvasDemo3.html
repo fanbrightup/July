@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<title>canvas变换矩形</title>
+<body>
+  <canvas id="myCanvas" width="500" height="500"></canvas>
+  <script src="../source/jquery.js"></script>
+  <script>
+    var canvas = $("#myCanvas");
+    var context = canvas.get(0).getContext("2d");
+
+    var gradient = context.createRadialGradient(500,500,100,100,100,100);
+    gradient.addColorStop(0,"rgb(0,0,0)");
+    gradient.addColorStop(1,"rgb(150,150,150)");
+    context.fillStyle = gradient;
+    context.fillRect(0,0,canvas.width(),canvas.height());
+  </script>
+</body>
+</html>
