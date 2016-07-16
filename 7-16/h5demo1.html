@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset = "utf-8" >
+  <title>h5demo1</title>
+</head>
+  <body>
+    请输入:<input type = "text" data-my="mydata" spellcheck = "true" onselect="hehe()"></input>
+    <input type = "button"  value="btn1" onselect="hehe()">
+    <form>
+
+Select text: <input type="text" value="Hello world!"
+onselect="alert('You have selected some of the text.')" />
+<br /><br />
+Select text: <textarea cols="20" rows="5"
+onselect="alert('You have selected some of the text.')">
+Hello world!</textarea>
+
+</form>
+    <script >
+      function hehe(){
+        alert("hehe");
+      }
+      var myInput = document.getElementsByTagName("input")[0];
+      // alert(myInput);
+    </script>
+  </body>
+</html>
+<!-- <!DOCTYPE html>
+ 2 <html>
+ 3 <head>
+ 4 <meta charset="utf-8" />
+ 5 <title>spellcheck属性的使用</title>
+ 6 </head>
+ 7 <body>
+ 8 <style>
+ 9 .ac{border:1px solid #ff7300;width:200px;height:100px;}
+10 </style>
+11 <pre>
+12 1.<b>输入完某个单词后,进行按空格键，就可以看到这是不是错误的单词了。</b>
+13 2.spellcheck="true"、'false'、""，值为true和""时，代表检查。。
+14 【空字符串为什么检查：就跟input其他属性一样，你设置个readonly就是只读( readonly="")，再加个值描述的更准确。】
+15 3.使用场合：
+16    1.类型为text型的input元素，但input类型为text型的input元素，但input="password"不行(原因：你是密码哎，都是星号还检查个啥玩意,密码本身就是不同字母组合而出的)。
+17    2.textarea元素
+18    3.spellcheck属性，html5中的所有元素都可以指定，对于不是输入栏的元素，须指定contenteditable="true" 编辑属性，才能使用。(如div什么的。)
+19 4.现代浏览器都支持以及IE10
+20 </pre>
+21
+22 <p>检测<textarea spellcheck="true" >absolute testK</textarea> </p>
+23 <p>不检测 <textarea spellcheck="false"></textarea> </p>
+24 <div contenteditable="true" spellcheck class="ac">div absolute testK</div>
+25 <p>readonly=""：<input readonly=""/></p>
+26 <p><input type="password" spellcheck="true"/></p>
+27 </body>
+28 </html>  -->

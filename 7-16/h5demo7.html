@@ -1,0 +1,36 @@
+<script src="jquery-3.1.0.js">
+</script>
+<script type="text/javascript">
+   $(document).ready(function(){
+
+
+         var canvas=$("#myCanvas");
+      var context=canvas.getContext("2d");         ////////////////创建2d渲染上下文图
+
+
+        var img=new Image();                     ///////////////////////获取一张图片地址，你可以随便更改你喜欢的图片
+         img.src="1.jpg";
+
+
+        $(img).load(function(){
+              context.drawImage(img,0,0);    /////////////////在画布上绘制的一张图像，用的是之前的图像当要把它载入画布
+            });
+
+
+      canvas.click(function(e){              ///////////////////鼠标在画布的图像上取得像素的坐标
+                var canvasOffset=canvas.offset();
+               var canvasX=Math.floor(e.pageX-canvasOffset.left);
+              var canvasY=Math.floor(e.pageY-canvasOffset.top);
+
+         var imageData=context.getImageData(canvasX,canvasY,1,1);
+           var pixel=imageData.data;
+          var pixelColor="rgba("+pixel[0]+","+pixel[1]+","+pixel[2]+","+pixel[3]+")"     ////////将获取到的像素信息传给变量
+
+
+         $("body").css("background",pixelColor);       ///////////////////将变量中的信息传给body作为他的背景颜色
+                  document.myForm.red.value=pixel[0];
+                  document.myForm.green.value=pixel[1];
+                  document.myForm.blue.value=pixel[2];
+              });
+       });
+ </script>
