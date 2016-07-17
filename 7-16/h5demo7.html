@@ -9,12 +9,12 @@
 
 
         var img=new Image();                     ///////////////////////获取一张图片地址，你可以随便更改你喜欢的图片
-         img.src="1.jpg";
+         img.src="../images/3.jpg";
 
 
-        $(img).load(function(){
+        img.onload = function(){
               context.drawImage(img,0,0);    /////////////////在画布上绘制的一张图像，用的是之前的图像当要把它载入画布
-            });
+            }
 
 
       canvas.click(function(e){              ///////////////////鼠标在画布的图像上取得像素的坐标

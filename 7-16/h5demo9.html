@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>绘制心形相框</title>
+    <title>drawImage()</title>
     <style>
         body { background: url("./images/bg3.jpg") repeat; }
         #canvas { border: 1px solid #aaaaaa; display: block; margin: 50px auto; }
@@ -24,17 +24,10 @@
         context.fillStyle = "#FFF";
         context.fillRect(0,0,800,600);
 
-        context.beginPath();
-        context.moveTo(400,260);
-        context.bezierCurveTo(450,220,450,300,400,315);
-        context.bezierCurveTo(350,300,350,220,400,260);
-        context.clip();
-        context.closePath();
-
         var img = new Image();
         img.src = "../images/3.jpg";
         img.onload = function(){
-            context.drawImage(img,348,240,100,100);
+            context.drawImage(img,200,50);
         }
     };
 </script>

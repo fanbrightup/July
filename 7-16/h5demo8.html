@@ -6,20 +6,25 @@
 
 </head>
 <body>
-    <canvas id="myCanvas" width = 500,height = 300>
+    <canvas id="myCanvas" >
         你的浏览器居然不支持Canvas？！赶快换一个吧！！
     </canvas>
+    <img src="../images/3.jpg">
 <script src = "jquery-3.1.0.js">
 </script>
 <script>
+  window.onload = function(){
+  // var myCanvas = document.getElementById("canvas");
   var myCanvas = $("#myCanvas");
-  var context = myCanvas.get(0).getContext("2d");
-
-  var myImage = new Image();
-  myImage.src="../images/bg1.jpg";
-  myImage.onload = function (){
-      context.drawImage(myImage,0,0,500,300);
+  myCanvas.width=1000;
+  myCanvas.height=1000;
+  var context = myCanvas.getContext("2d");
+  var img = new Image();
+  img.src = "../images/3.jpg";
+  img.onload = function(){
+      context.drawImage(img,20,50,100,100);
   }
+
 </script>
 </body>
 </html>
