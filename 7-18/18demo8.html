@@ -60,7 +60,7 @@
         //通过$.data方式取出数据
         var reset = $.data(ele, "a") + "</br>" + $.data(ele, "b").name
         ele.find('span').append(reset)
-    })\
+    });
     </script>
     <script type="text/javascript">
     $('.right').click(function() {
@@ -69,10 +69,10 @@
         ele.data("a", "data test")
         ele.data("b", {
             name: "慕课网"
-        })
+        }) 
         //通过.data方式取出数据
-        var reset = ele.data("a") + "</br>" + ele.data("b").name
-        $('*').find('span').append(reset)
+        var reset = ele.data("a") + "</br>" + ele.data("b");
+        $('.right').find('span').append(reset);
     })
     </script>
 </body>
