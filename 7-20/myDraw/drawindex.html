@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>myDrawingboard</title>
+  <link rel = "stylesheet" type = "text/css" href = "mydraw.css">
+</head>
+<body>
+  <div class = "tool">
+    <div class="color">
+      <span>当前颜色:</span>
+      <div id="usecolor"></div>
+      <ul id="color">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+    <div class="width">
+      <span>粗/细</span>
+      <div id="level">
+        <div id="range"></div>
+    </div>
+  </div>
+  <div class="clear">
+    <img id="clear" src="img/rubber.png" alt="" />
+  </div>
+  <div class="removeall">
+    <img id="remove" src="img/reset.png" alt="" />
+  </div>
+  <div class="pencil">
+    <img id="pencil" class="active" src="img/pencil.png"  alt="" />
+  </div>
+</div>
+
+  <canvas id="draw" width="800px" height="400px"
+    style="border:1px solid black;cursor:crosshair"></canvas>
+    <script type="text/javascript" src="mydraw.js"></script>
+
+</body>
+</html>
