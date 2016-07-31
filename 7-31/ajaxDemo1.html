@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<head>
+<meta  charset='utf8'/>
+</head>
+<body>
+<script language="javascript" type="text/javascript">
+<!--
+// 浏览器支持代码
+function AjaxFunction(){
+    var AjaxRequest;  // 缓存 XMLHttpRequest 对象
+        AjaxRequest = new XMLHttpRequest();
+
+    // 创建一个接受服务器发送的数据的函数，它还会更新同一页面的 div 部分。
+    AjaxRequest.onreadystatechange = function(){
+
+        if(AjaxRequest.readyState == 4){
+          console.log("4")
+            var AjaxDisplay = document.getElementById('AjaxDiv');
+            console.log('5');
+              AjaxDisplay.innerHTML = '<h1> Welcome</h1>';
+            AjaxDisplay.innerHTML = AjaxRequest.responseText;
+            // console.log(AjaxRequest.responseText);
+            console.log('6');
+        }
+    }
+    // 然后获取用户输入值并传递给服务器脚本
+    var selcetName = document.getElementById('selectName');
+    var index = selectName.selectedIndex;
+    var name = selectName.options[index].value;
+    console.log(name);
+    var queryString = name ;
+
+    AjaxRequest.open("GET", "./ajaxSqlDemo1.js "+queryString, true);
+    AjaxRequest.send();
+
+}
+//-->
+</script>
+
+<form name='myForm'>
+
+    <select id='selectName'>
+      <option value="Frank">Name:Frank</option>
+      <option value="Jill">Name:Jill</option>
+      <option value="Julie">Name:Julie</option>
+    </select>
+    <input type='button' onclick='AjaxFunction()' value='Query MySQL'/>
+
+</form>
+<div id='AjaxDiv'>结果会显示在这里。</div>
+</body>
+</html>
+<!-- Frank |  45 | m   |  87 |
+| Jerry | 120 | m   |  20 |
+| Jill  |  22 | f   |  72 |
+| Julie |  35 | f   |  90 |
+| Regis |  75 | m   |  44 |
+| Tracy |  27 | f   |   0 |
+-->
+
+
+<!-- CREATE TABLE Ajax_example (
+   name varchar(50) NOT NULL,
+   age int(11) NOT NULL,
+   sex varchar(1) NOT NULL,
+   wpm int(11) NOT NULL,
+   PRIMARY KEY  (name)
+)
+INSERT INTO Ajax_example VALUES ('Regis', 75, 'm', 44);
+INSERT INTO Ajax_example VALUES ('Frank', 45, 'm', 87);
+INSERT INTO Ajax_example VALUES ('Jill', 22, 'f', 72);
+INSERT INTO Ajax_example VALUES ('Tracy', 27, 'f', 0);
+INSERT INTO Ajax_example VALUES ('Julie', 35, 'f', 90); -->
